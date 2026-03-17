@@ -73,6 +73,8 @@ export interface TailwindPluginOptions {
       input: ResolverInput;
     };
   };
+  /** Reference existing CSS variables instead of raw values */
+  referenceCssVariables?: string[];
 }
 
 /** Flatten an arbitrarily-nested object */

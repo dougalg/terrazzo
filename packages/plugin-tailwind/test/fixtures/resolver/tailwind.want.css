@@ -7,7 +7,16 @@
       "Courier New", monospace;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-blue-6: rgb(1.9608% 31.373% 68.235%);
+    --color-blue-0: var(--color-blue-0);
+    --color-blue-1: var(--color-blue-1);
+    --color-blue-2: var(--color-blue-2);
+    --color-blue-3: var(--color-blue-3);
+    --color-blue-4: var(--color-blue-4);
+    --color-blue-5: var(--color-blue-5);
+    --color-blue-6: var(--color-blue-6);
+    --color-blue-7: var(--color-blue-7);
+    --color-blue-8: var(--color-blue-8);
+    --color-blue-9: var(--color-blue-9);
   }
 }
 @layer base {
@@ -160,16 +169,16 @@
 }
 @layer utilities;
 @media (prefers-color-scheme: dark) {
-  --color-blue-0: rgb(79.216% 90.98% 100%);
-  --color-blue-1: rgb(64.706% 83.922% 100%);
-  --color-blue-2: rgb(47.451% 75.294% 100%);
-  --color-blue-3: rgb(34.51% 65.098% 100%);
-  --color-blue-4: rgb(21.961% 54.51% 99.216%);
-  --color-blue-5: rgb(12.157% 43.529% 92.157%);
-  --color-blue-6: rgb(6.6667% 34.51% 78.039%);
-  --color-blue-7: rgb(5.098% 25.49% 61.569%);
-  --color-blue-8: rgb(4.7059% 17.647% 41.961%);
-  --color-blue-9: rgb(1.9608% 11.373% 30.196%);
+  --color-blue-0: var(--color-blue-0);
+  --color-blue-1: var(--color-blue-1);
+  --color-blue-2: var(--color-blue-2);
+  --color-blue-3: var(--color-blue-3);
+  --color-blue-4: var(--color-blue-4);
+  --color-blue-5: var(--color-blue-5);
+  --color-blue-6: var(--color-blue-6);
+  --color-blue-7: var(--color-blue-7);
+  --color-blue-8: var(--color-blue-8);
+  --color-blue-9: var(--color-blue-9);
   --color-green-0: rgb(68.627% 96.078% 70.588%);
   --color-green-1: rgb(49.412% 90.588% 52.941%);
   --color-green-2: rgb(33.725% 82.745% 39.216%);
@@ -261,16 +270,16 @@
   --foo-baz: rgb(43.137% 25.098% 78.824%);
 }
 [data-theme="light-hc"] & {
-  --color-blue-0: rgb(87.451% 96.863% 100%);
-  --color-blue-1: rgb(61.176% 84.314% 100%);
-  --color-blue-2: rgb(40.392% 70.196% 99.216%);
-  --color-blue-3: rgb(21.176% 54.902% 97.647%);
-  --color-blue-4: rgb(6.6667% 40.784% 89.02%);
-  --color-blue-5: rgb(1.1765% 28.627% 70.588%);
-  --color-blue-6: rgb(0.78431% 23.137% 58.431%);
-  --color-blue-7: rgb(0.78431% 18.431% 47.843%);
-  --color-blue-8: rgb(1.1765% 14.51% 38.824%);
-  --color-blue-9: rgb(0.78431% 10.196% 29.02%);
+  --color-blue-0: var(--color-blue-0);
+  --color-blue-1: var(--color-blue-1);
+  --color-blue-2: var(--color-blue-2);
+  --color-blue-3: var(--color-blue-3);
+  --color-blue-4: var(--color-blue-4);
+  --color-blue-5: var(--color-blue-5);
+  --color-blue-6: var(--color-blue-6);
+  --color-blue-7: var(--color-blue-7);
+  --color-blue-8: var(--color-blue-8);
+  --color-blue-9: var(--color-blue-9);
   --color-green-0: rgb(82.353% 99.608% 85.882%);
   --color-green-1: rgb(50.98% 89.804% 58.824%);
   --color-green-2: rgb(26.275% 77.647% 38.824%);
@@ -362,16 +371,16 @@
   --foo-baz: rgb(31.765% 14.51% 59.608%);
 }
 [data-theme="dark-hc"] & {
-  --color-blue-0: rgb(79.216% 91.765% 100%);
-  --color-blue-1: rgb(67.843% 86.275% 100%);
-  --color-blue-2: rgb(56.863% 79.608% 100%);
-  --color-blue-3: rgb(44.314% 71.765% 100%);
-  --color-blue-4: rgb(36.078% 67.451% 100%);
-  --color-blue-5: rgb(25.098% 61.961% 100%);
-  --color-blue-6: rgb(19.216% 54.51% 97.255%);
-  --color-blue-7: rgb(14.902% 44.706% 95.294%);
-  --color-blue-8: rgb(11.765% 37.647% 83.529%);
-  --color-blue-9: rgb(9.8039% 30.98% 69.412%);
+  --color-blue-0: var(--color-blue-0);
+  --color-blue-1: var(--color-blue-1);
+  --color-blue-2: var(--color-blue-2);
+  --color-blue-3: var(--color-blue-3);
+  --color-blue-4: var(--color-blue-4);
+  --color-blue-5: var(--color-blue-5);
+  --color-blue-6: var(--color-blue-6);
+  --color-blue-7: var(--color-blue-7);
+  --color-blue-8: var(--color-blue-8);
+  --color-blue-9: var(--color-blue-9);
   --color-green-0: rgb(67.451% 96.863% 71.373%);
   --color-green-1: rgb(44.706% 94.118% 53.333%);
   --color-green-2: rgb(29.02% 88.235% 40.784%);

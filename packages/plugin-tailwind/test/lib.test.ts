@@ -116,16 +116,16 @@ describe('parseTzAtRule', () => {
     expect(parseTzAtRule('@tzap(theme: light);')).toBeUndefined();
   });
   it('errs on invalid syntax', () => {
-    expect(() => parseTzAtRule('@tz(theme: dark-hc)')).toThrowError(
+    expect(() => parseTzAtRule('@tz(theme: dark-hc)')).toThrow(
       'Invalid syntax: @tz(theme: dark-hc). Expected @tz(modifier1: "value", modifier2: "value", …).',
     );
-    expect(() => parseTzAtRule('@tz("theme": dark-hc)')).toThrowError(
+    expect(() => parseTzAtRule('@tz("theme": dark-hc)')).toThrow(
       'Invalid syntax: @tz("theme": dark-hc). Expected @tz(modifier1: "value", modifier2: "value", …).',
     );
-    expect(() => parseTzAtRule('@tz(theme dark-hc)')).toThrowError(
+    expect(() => parseTzAtRule('@tz(theme dark-hc)')).toThrow(
       'Invalid syntax: @tz(theme dark-hc). Expected @tz(modifier1: "value", modifier2: "value", …).',
     );
-    expect(() => parseTzAtRule('@tz theme: dark-hc;')).toThrowError(
+    expect(() => parseTzAtRule('@tz theme: dark-hc;')).toThrow(
       'Invalid syntax: @tz theme: dark-hc;. Expected @tz(modifier1: "value", modifier2: "value", …).',
     );
   });

@@ -2,6 +2,7 @@ import fsSync from 'node:fs';
 import fs from 'node:fs/promises';
 import type { Plugin } from '@terrazzo/parser';
 import { FORMAT_ID as FORMAT_CSS } from '@terrazzo/plugin-css';
+import { CachedWildcardMatcher } from '@terrazzo/token-tools';
 import { makeCSSVar } from '@terrazzo/token-tools/css';
 import {
   buildFileHeader,
@@ -14,6 +15,8 @@ import {
 } from './lib.js';
 
 export * from './lib.js';
+
+const cachedMatcher = new CachedWildcardMatcher();
 
 export default function pluginTailwind(options: TailwindPluginOptions): Plugin {
   const filename = options?.filename ?? 'tailwind-theme.css';
@@ -68,6 +71,7 @@ export default function pluginTailwind(options: TailwindPluginOptions): Plugin {
         // will result in many dropped tokens.
         for (const { path, value } of flatTheme) {
           const variantTokens = getTransforms({ ...query, format: FORMAT_CSS, id: value });
+
           // Warn the user if they are trying to generate an empty Tailwind variant
           if (!variantTokens.length) {
             logger.warn({ ...msg, message: `${value} matched 0 tokens` });
@@ -79,11 +83,19 @@ export default function pluginTailwind(options: TailwindPluginOptions): Plugin {
               const match = subgroup.replace(/\*.*/, '');
               relName = token.id.replace(match, '');
             }
+            const localID = makeCSSVar(`${path.join('-')}-${relName.replace(/\./g, '-')}`);
+            const rawValue = typeof token.value === 'object' ? token.value['.']! : token.value;
+            const shouldReferenceCssVariables = (options.referenceCssVariables || []).some((test) => {
+              const matcher = cachedMatcher.tokenIDMatch(test);
+              // logger.warn({ ...msg, message: `${test} ${token.id} ${matcher(token.id)}`})
+              return matcher(token.id);
+            });
+            // logger.warn({ ...msg, message: `!!!! ${token.id} ${shouldReferenceCssVariables}`})
             setTransform(token.id, {
               ...query,
               format: FORMAT_TAILWIND,
-              localID: makeCSSVar(`${path.join('-')}-${relName.replace(/\./g, '-')}`),
-              value: typeof token.value === 'object' ? token.value['.']! : token.value,
+              localID,
+              value: shouldReferenceCssVariables ? `var(${localID})` : rawValue,
             });
           }
         }

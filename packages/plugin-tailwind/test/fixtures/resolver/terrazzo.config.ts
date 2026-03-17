@@ -26,6 +26,7 @@ export default defineConfig({
     tailwind({
       template: 'tailwind.template.css',
       filename: 'actual.css',
+      referenceCssVariables: ['base.color.blue.**'],
       theme: {
         color: {
           blue: ['base.color.blue.**'],
